@@ -7,8 +7,8 @@ layout: layout.html
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 10% 0px 0px 0px;
-        height: 20vh;
+        height: 50vh;
+        padding: var(--space-m) 0% var(--space-m) 0%;
     }
     .sectiontwo {
         margin: 100px auto;
@@ -16,12 +16,14 @@ layout: layout.html
         flex-wrap: wrap;
         justify-content: space-evenly;
         gap: var(--space-l);
+        padding: var(--space-m) 0% var(--space-m) 0%;
+        height: 10vh;
     }
     a.nav {
         padding: var(--space-s) var(--space-l);
         text-align: center;
         border: 1px solid var(--midgreen);
-        border-radius: var(--space-s);
+        border-radius: var(--space-l);
         text-transform: uppercase;
         font-weight: 400;
         letter-spacing: 2px;
@@ -33,12 +35,12 @@ layout: layout.html
     }
     .profile-pic {
         object-fit: cover;
-        border-radius: 300px;
+        border-radius: 500px;
         border: 1px solid var(--blackgreen);
-        scale: 0.4;
+        height: 40vh;
     }
     .circle-name {
-        scale: 0.5;
+        height: 50vh;
     }
     .sectionone img {
         position: absolute;
@@ -48,14 +50,14 @@ layout: layout.html
 <div class="container">
     <div class="sectionone">
         <img
-            src="images/circle-name.svg"
-            class="circle-name"
-            alt="Tanner the Mardis"
-        />
-        <img
             src="images/tm-lego-coffee.jpg"
             class="profile-pic"
             alt="profile picture of tanner's lego minifigure"
+        />
+        <img
+            src="images/circle-name.svg"
+            class="circle-name"
+            alt="Tanner the Mardis"
         />
     </div>
 

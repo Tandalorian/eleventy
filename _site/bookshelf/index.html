@@ -26,7 +26,11 @@
                 --midgreen: oklch(64% 0.14 157);
                 --darkgreen: oklch(24% 0.03 180);
                 --blackgreen: oklch(18% 0.01 180);
-                --darkgrey: oklch(18% 0 180);
+                --grey100: oklch(100% 0.001 90);
+                --grey200: oklch(90% 0.001 90);
+                --grey300: oklch(60% 0.001 90);
+                --grey400: oklch(25% 0.001 90);
+                --grey500: oklch(18% 0.001 90);
 
                 /*SPACE*/
                 --space-3xs: clamp(
@@ -84,12 +88,6 @@
                 --grid-columns: 12;
 
                 /*BOOKSHELF*/
-                --1: #ffffff;
-                --2: #e0dfdb;
-                --3: #7f7f80;
-                --4: #222222;
-                --5: #3b3b3b;
-                --6: #111111;
 
                 --shadow-color: 44deg 8% 20%;
                 --shadow-elevation-low: 0px 0.2px 0.2px
@@ -153,6 +151,7 @@
                 max-width: var(--grid-max-width);
                 padding-inline: var(--grid-gutter);
                 margin-inline: auto;
+                padding: var(--space-m) 0% var(--space-m) 0%;
             }
             main {
                 max-width: var(--grid-max-width);
@@ -181,7 +180,7 @@
         <main>
 <style type="text/css">
     html {
-        background: var(--darkgrey);
+        background: var(--grey500);
     }
 
     .bookcase {
@@ -190,7 +189,7 @@
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: center;
-        border: 24px solid var(--2);
+        border: 24px solid var(--grey200);
         border-bottom: 0px;
         padding: 0px 0px;
         max-width: var(--grid-max-width);
@@ -199,7 +198,7 @@
     .bookwrap {
         height: clamp(350px, 40vh, 500px);
         width: clamp(200px, 20vw, 300px);
-        border-bottom: 24px solid var(--2);
+        border-bottom: 24px solid var(--grey200);
         background-image: var(--back);
         display: flex;
         flex-grow: 1;
@@ -222,7 +221,7 @@
     .book {
         width: 150px;
         min-height: 150px;
-        background: var(--6);
+        background: var(--grey500);
         position: relative;
         bottom: -24px;
         margin: 0px;

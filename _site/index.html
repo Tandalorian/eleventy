@@ -26,7 +26,11 @@
                 --midgreen: oklch(64% 0.14 157);
                 --darkgreen: oklch(24% 0.03 180);
                 --blackgreen: oklch(18% 0.01 180);
-                --darkgrey: oklch(18% 0 180);
+                --grey100: oklch(100% 0.001 90);
+                --grey200: oklch(90% 0.001 90);
+                --grey300: oklch(60% 0.001 90);
+                --grey400: oklch(25% 0.001 90);
+                --grey500: oklch(18% 0.001 90);
 
                 /*SPACE*/
                 --space-3xs: clamp(
@@ -84,12 +88,6 @@
                 --grid-columns: 12;
 
                 /*BOOKSHELF*/
-                --1: #ffffff;
-                --2: #e0dfdb;
-                --3: #7f7f80;
-                --4: #222222;
-                --5: #3b3b3b;
-                --6: #111111;
 
                 --shadow-color: 44deg 8% 20%;
                 --shadow-elevation-low: 0px 0.2px 0.2px
@@ -153,6 +151,7 @@
                 max-width: var(--grid-max-width);
                 padding-inline: var(--grid-gutter);
                 margin-inline: auto;
+                padding: var(--space-m) 0% var(--space-m) 0%;
             }
             main {
                 max-width: var(--grid-max-width);
@@ -184,8 +183,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 10% 0px 0px 0px;
-        height: 20vh;
+        height: 50vh;
+        padding: var(--space-m) 0% var(--space-m) 0%;
     }
     .sectiontwo {
         margin: 100px auto;
@@ -193,12 +192,14 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
         gap: var(--space-l);
+        padding: var(--space-m) 0% var(--space-m) 0%;
+        height: 10vh;
     }
     a.nav {
         padding: var(--space-s) var(--space-l);
         text-align: center;
         border: 1px solid var(--midgreen);
-        border-radius: var(--space-s);
+        border-radius: var(--space-l);
         text-transform: uppercase;
         font-weight: 400;
         letter-spacing: 2px;
@@ -210,12 +211,12 @@
     }
     .profile-pic {
         object-fit: cover;
-        border-radius: 300px;
+        border-radius: 500px;
         border: 1px solid var(--blackgreen);
-        scale: 0.4;
+        height: 40vh;
     }
     .circle-name {
-        scale: 0.5;
+        height: 50vh;
     }
     .sectionone img {
         position: absolute;
@@ -225,14 +226,14 @@
 <div class="container">
     <div class="sectionone">
         <img
-            src="images/circle-name.svg"
-            class="circle-name"
-            alt="Tanner the Mardis"
-        />
-        <img
             src="images/tm-lego-coffee.jpg"
             class="profile-pic"
             alt="profile picture of tanner's lego minifigure"
+        />
+        <img
+            src="images/circle-name.svg"
+            class="circle-name"
+            alt="Tanner the Mardis"
         />
     </div>
 
