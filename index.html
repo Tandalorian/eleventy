@@ -1,0 +1,77 @@
+---
+layout: layout.html
+---
+
+<style>
+    .sectionone {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10% 0px 0px 0px;
+        height: 20vh;
+    }
+    .sectiontwo {
+        margin: 100px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 32px;
+    }
+    a.nav {
+        padding: var(--space-s) var(--space-l);
+        text-align: center;
+        border: 1px solid var(--midgreen);
+        border-radius: var(--space-s);
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 2px;
+        text-decoration: none;
+    }
+    a.nav:hover {
+        color: var(--limegreen);
+        border: 1px solid var(--limegreen);
+    }
+    .profile-pic {
+        object-fit: cover;
+        border-radius: 300px;
+        border: 1px solid var(--blackgreen);
+        scale: 0.4;
+    }
+    .circle-name {
+        scale: 0.5;
+    }
+    .sectionone img {
+        position: absolute;
+    }
+</style>
+
+<div class="container">
+    <div class="sectionone">
+        <img
+            src="images/circle-name.svg"
+            class="circle-name"
+            alt="Tanner the Mardis"
+        />
+        <img
+            src="images/tm-lego-coffee.jpg"
+            class="profile-pic"
+            alt="profile picture of tanner's lego minifigure"
+        />
+    </div>
+
+    <div class="sectiontwo">
+        <a class="nav" href="https://dribbble.com/tannermardis" target="blank"
+            >Dribbble</a
+        >
+        <a class="nav" href="https://x.com/tannermardis" target="blank"
+            >Twitter</a
+        >
+        <a class="nav" href="/bookshelf">Bookshelf</a>
+        <a class="nav" href="/photography">Photography</a>
+    </div>
+</div>
+
+{% for post in collections.post %}
+<h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+<p>{{ post.content }}</p>
+{% endfor %}
