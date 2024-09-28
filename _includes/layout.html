@@ -122,11 +122,21 @@
                         rgba(52, 50, 48, 1) 100%
                     );
             }
+            /*RESET*/
             *,
             *::before,
             *::after {
                 box-sizing: border-box;
             }
+            img,
+            picture,
+            video,
+            canvas,
+            svg {
+                display: block;
+                max-width: 100%;
+            }
+            /*END RESET*/
             html {
                 background: var(--darkgreen);
                 background-image: url("images/noise.png");
