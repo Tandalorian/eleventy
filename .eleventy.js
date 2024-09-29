@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
     const path = require("path");
 
     const imageDir = "photos";
-    const imageExtensions = [".jpg", ".jpeg", ".png"];
+    const imageExtensions = [".jpg", ".jpeg", ".png", ".avif"];
 
     // Read all files in the images directory
     let images = fs.readdirSync(imageDir).filter((file) => {

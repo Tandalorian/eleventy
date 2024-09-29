@@ -4,15 +4,57 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Tanner the Mardis</title>
-        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+        <meta
+            name="description"
+            content="The website of Tanner Mardis, Star Wars nerd, Lego Lover, and self proclaimed pixel pushing Designer"
+        />
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "WebSite",
+                "name": "Tanner Mardis",
+                "url": "https://tannermardis.me",
+                "creator": {
+                    "@type": "Organization",
+                    "name": "Mardis Studio",
+                    "url": "https://mardis.studio",
+                    "description": "Designed and developed by Mardis Studio."
+                }
+            }
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap"
             rel="stylesheet"
         />
 
         <style>
             /* @link https://utopia.fyi/type/calculator?c=324,16,1.333,1332,18,1.5,2,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=xs,l,2xl,12 */
+            @font-face {
+                font-family: "rubik";
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/rubik/v1/MwQ5bhb078Wt2VFBPap6.woff2)
+                    format("woff2");
+            }
+            @font-face {
+                font-family: "Regular XL Soft";
+                src:
+                    url("fonts/RegularXLSoft-MediumWEB.woff") format("woff"),
+                    url("fonts/RegularXLSoft-MediumWEB.woff2") format("woff2");
+                font-weight: 500;
+                font-style: normal;
+            }
 
+            @font-face {
+                font-family: "Regular XL Soft";
+                src:
+                    url("fonts/RegularXLSoft-BoldWEB.woff") format("woff"),
+                    url("fonts/RegularXLSoft-BoldWEB.woff2") format("woff2");
+                font-weight: 700;
+                font-style: normal;
+            }
             :root {
                 /*FONT SIZE*/
                 --step--1: clamp(0.75rem, 0.7502rem + -0.0003vw, 0.7502rem);
@@ -120,6 +162,7 @@
                         oklch(30% 0.01 60) 100%
                     );
             }
+
             /*RESET*/
             *,
             *::before,
@@ -141,7 +184,7 @@
                 height: 100%;
             }
             body {
-                font-family: "rubik", sans-serif;
+                font-family: "Regular XL Soft", "rubik", sans-serif;
                 font-size: var(--step-0);
                 line-height: 1.5;
                 color: var(--cream);
@@ -163,6 +206,7 @@
             }
             .logo {
                 width: var(--space-3xl);
+                margin: var(--space-xs);
             }
         </style>
     </head>
@@ -232,7 +276,6 @@
     .book:hover {
         box-shadow: var(--shadow-elevation-high);
         transform: rotateX(0deg) rotateY(-20deg) scale(1.08);
-        transform-style: preserve-3d;
     }
 
     .book img {
@@ -378,6 +421,18 @@
     <div class="bookwrap">
         <div class="book">
             <a
+                href="https://www.amazon.com/Elements-Typographic-Style-Robert-Bringhurst/dp/0881792063"
+                target="_blank"
+            >
+                <img
+                    src="https://m.media-amazon.com/images/I/41aX0fEkNwL._SY445_SX342_.jpg"
+                    alt="The Elements of Typographic Style by Robert Bringhurst"
+            /></a>
+        </div>
+    </div>
+    <div class="bookwrap">
+        <div class="book">
+            <a
                 href="https://www.amazon.com/Scrum-Doing-Twice-Work-Half/dp/038534645X"
                 target="_blank"
             >
@@ -390,12 +445,12 @@
     <div class="bookwrap">
         <div class="book">
             <a
-                href="https://www.amazon.com/Elements-Typographic-Style-Robert-Bringhurst/dp/0881792063"
+                href="https://www.amazon.com/Exactly-What-Say-Influence-Impact/dp/1989025005"
                 target="_blank"
             >
                 <img
-                    src="https://m.media-amazon.com/images/I/41aX0fEkNwL._SY445_SX342_.jpg"
-                    alt="The Elements of Typographic Style by Robert Bringhurst"
+                    src="https://m.media-amazon.com/images/I/71LzPlsDcEL._SL1500_.jpg"
+                    alt="Exactly What to Say by Phil M Jones"
             /></a>
         </div>
     </div>

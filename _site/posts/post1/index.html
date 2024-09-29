@@ -4,15 +4,57 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Tanner the Mardis</title>
-        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+        <meta
+            name="description"
+            content="The website of Tanner Mardis, Star Wars nerd, Lego Lover, and self proclaimed pixel pushing Designer"
+        />
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "WebSite",
+                "name": "Tanner Mardis",
+                "url": "https://tannermardis.me",
+                "creator": {
+                    "@type": "Organization",
+                    "name": "Mardis Studio",
+                    "url": "https://mardis.studio",
+                    "description": "Designed and developed by Mardis Studio."
+                }
+            }
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap"
             rel="stylesheet"
         />
 
         <style>
             /* @link https://utopia.fyi/type/calculator?c=324,16,1.333,1332,18,1.5,2,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=xs,l,2xl,12 */
+            @font-face {
+                font-family: "rubik";
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/rubik/v1/MwQ5bhb078Wt2VFBPap6.woff2)
+                    format("woff2");
+            }
+            @font-face {
+                font-family: "Regular XL Soft";
+                src:
+                    url("fonts/RegularXLSoft-MediumWEB.woff") format("woff"),
+                    url("fonts/RegularXLSoft-MediumWEB.woff2") format("woff2");
+                font-weight: 500;
+                font-style: normal;
+            }
 
+            @font-face {
+                font-family: "Regular XL Soft";
+                src:
+                    url("fonts/RegularXLSoft-BoldWEB.woff") format("woff"),
+                    url("fonts/RegularXLSoft-BoldWEB.woff2") format("woff2");
+                font-weight: 700;
+                font-style: normal;
+            }
             :root {
                 /*FONT SIZE*/
                 --step--1: clamp(0.75rem, 0.7502rem + -0.0003vw, 0.7502rem);
@@ -120,6 +162,7 @@
                         oklch(30% 0.01 60) 100%
                     );
             }
+
             /*RESET*/
             *,
             *::before,
@@ -141,7 +184,7 @@
                 height: 100%;
             }
             body {
-                font-family: "rubik", sans-serif;
+                font-family: "Regular XL Soft", "rubik", sans-serif;
                 font-size: var(--step-0);
                 line-height: 1.5;
                 color: var(--cream);
@@ -163,6 +206,7 @@
             }
             .logo {
                 width: var(--space-3xl);
+                margin: var(--space-xs);
             }
         </style>
     </head>
@@ -175,9 +219,19 @@
                     alt="Tanner Mardis Logo"
                 />
             </a>
-            <h1>Blog 1</h1>
+            <h1>The Salt of Design</h1>
         </header>
-        <main><p>test content for blog 1</p>
+        <main><h3>Where’s the salt in design?</h3>
+<p>Design is simple, like a chocolate chip cookie, but when you add salt to it, it becomes a fancy chocolate chip cookie. The cookie can not succeed without the salt. A fractional mouth watering addition.</p>
+<blockquote>
+<p>&quot;Good design is actually a lot harder to notice than poor design, in part because good designs fit our needs so well that the design is invisible&quot;<br>
+– Donald A. Norman, <a href="https://www.goodreads.com/book/show/18872940-the-design-of-everyday-things">The Design of Everyday Things</a></p>
+</blockquote>
+<h3>Salt is invisible until there isn’t any, so it is with good design</h3>
+<p>They say the devil is in the details…</p>
+<p>How do you know if something doesn’t have salt? Your mouth isn’t watering for more…</p>
+<p>How do you know if something has salt?</p>
+<p>Apple mail send sound is in stereo.</p>
 </main>
     </body>
 </html>
