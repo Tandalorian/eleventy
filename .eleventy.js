@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("photos");
   // Copy images directory to the output folder
   eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("style.css");
 
   // Configure a collection to read images from the images directory
   eleventyConfig.addCollection("imageList", function (collectionApi) {
