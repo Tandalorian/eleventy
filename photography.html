@@ -15,6 +15,7 @@ title: Tanner's Photography
         gap: var(--space-3xs) var(--space-3xs);
     }
     .image-item img {
+        background: var(--grey400);
         min-width: 100%;
         border-radius: var(--space-3xs);
         height: 30rem;
@@ -26,7 +27,7 @@ title: Tanner's Photography
 <div class="gallery">
     {% for image in collections.imageList %}
     <div class="image-item">
-        <img src="{{ image.url }}" alt="{{ image.name }}" />
+        <img src="{{ image.url }}" loading="lazy" alt="{{ image.name }}" />
     </div>
     {% endfor %}
 </div>
