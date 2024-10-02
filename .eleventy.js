@@ -1,11 +1,11 @@
 // .eleventy.js
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 module.exports = function (eleventyConfig) {
   // Copy photos directory to the output folder
   eleventyConfig.addPassthroughCopy("photos");
   // Copy images directory to the output folder
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("fonts");
-  eleventyConfig.image = {lazy: true,};
 
   // Configure a collection to read images from the images directory
   eleventyConfig.addCollection("imageList", function (collectionApi) {
