@@ -3,22 +3,18 @@ layout: layout.html
 ---
 
 <style>
-    @media screen and (max-width: 900px) {
-        .nav span {
-            display: none;
-        }
-    }
     .container {
         display: flex;
         justify-content: center;
-        align-items: center;
-        padding: var(--space-m) 0% var(--space-m) 10%;
+        align-items: stretch;
+        flex-basis: 1;
     }
     .image-container {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 560px;
+        max-width:;
     }
     .image-container img {
         aspect-ratio: 1 / 1;
@@ -30,7 +26,7 @@ layout: layout.html
         align-items: flex-start;
         gap: var(--space-m);
         z-index: 1;
-        width: 20%;
+        width: 220px;
     }
     .nav {
         background: none;
@@ -57,19 +53,19 @@ layout: layout.html
     }
     .nav:nth-child(1),
     .nav:nth-last-child(1) {
-        margin-left: -200px;
+        margin-left: -55%;
     }
     .nav:nth-child(2),
     .nav:nth-last-child(2) {
-        margin-left: -90px;
+        margin-left: -28%;
     }
     .nav:nth-child(3),
     .nav:nth-last-child(3) {
-        margin-left: -40px;
+        margin-left: -14%;
     }
     .nav:nth-child(4),
     .nav:nth-last-child(4) {
-        margin-left: -20px;
+        margin-left: -8%;
     }
     .nav::before {
         width: 26px;
@@ -116,7 +112,15 @@ layout: layout.html
         height: 25rem;
     }
     .circle-name {
-        height: 35rem;
+        width: 560px;
+    }
+    @media screen and (max-width: 780px) {
+        .nav span {
+            display: none;
+        }
+        .button-container {
+            width: 150px;
+        }
     }
 </style>
 
