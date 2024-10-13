@@ -53,6 +53,7 @@ layout: layout.html
         font-size: var(--step-0);
         color: var(--cream);
         align-items: center;
+        text-decoration: none;
     }
     .nav:nth-child(1),
     .nav:nth-last-child(1) {
@@ -76,28 +77,28 @@ layout: layout.html
         display: inline-block;
     }
     .nav:nth-child(1):before {
-        content: url(images/icon-camera.svg);
+        content: url(/images/icon-camera.svg);
     }
     .nav:nth-child(2):before {
-        content: url(images/icon-book.svg);
+        content: url(/images/icon-book.svg);
     }
     .nav:nth-child(3):before {
-        content: url(images/icon-typewriter.svg);
+        content: url(/images/icon-typewriter.svg);
     }
     .nav:nth-child(4):before {
-        content: url(images/icon-pen-swirl.svg);
+        content: url(/images/icon-pen-swirl.svg);
     }
     .nav:nth-child(5):before {
-        content: url(images/icon-twitter.svg);
+        content: url(/images/icon-twitter.svg);
     }
     .nav:nth-child(6):before {
-        content: url(images/icon-codepen.svg);
+        content: url(/images/icon-codepen.svg);
     }
     .nav:nth-child(7):before {
-        content: url(images/icon-mug-hot.svg);
+        content: url(/images/icon-mug-hot.svg);
     }
     .nav:nth-child(8):before {
-        content: url(images/icon-starwars.svg);
+        content: url(/images/icon-starwars.svg);
     }
     .nav span {
         margin-right: var(--space-2xs);
@@ -122,35 +123,39 @@ layout: layout.html
 <section class="container">
     <div class="image-container">
         <img
-            src="images/tm-coffee.avif"
+            src="/images/tm-coffee.avif"
             class="profile-pic"
             alt="profile picture of tanner's lego minifigure"
         />
         <img
-            src="images/circle-name.svg"
+            src="/images/circle-name.svg"
             class="circle-name"
             alt="Tanner the Mardis"
         />
     </div>
 
     <div class="button-container">
-        <button class="nav" href="/photography">
-            <span>Photographer</span>
-        </button>
-        <button class="nav" href="/bookshelf"><span>Book Reader</span></button>
-        <button class="nav" href="/thoughts"><span>Thinker</span></button>
-        <button class="nav" href="/portfolio"><span>Designer</span></button>
-        <button class="nav" href="https://x.com/tannermardis" target="_blank">
-            <span>Tweeter</span>
-        </button>
-        <button
+        <a class="nav" href="/photography"><span>Photographer</span></a>
+        <a class="nav" href="/bookshelf" class="nav"
+            ><span>Book Reader</span></a
+        >
+        <a class="nav" href="/thoughts" class="nav"><span>Thinker</span></a>
+        <a class="nav" href="/portfolio" class="nav"><span>Designer</span></a>
+        <a
+            class="nav"
+            href="https://x.com/tannermardis"
+            target="_blank"
+            class="nav"
+            ><span>Tweeter</span></a
+        >
+        <a
             class="nav"
             href="https://codepen.io/mardisstudio"
             target="_blank"
+            class="nav"
+            ><span>Wannabe Coder</span></a
         >
-            <span>Wannabe Coder</span>
-        </button>
-        <button class="nav" href="#"><span>Coffee Snob</span></button>
-        <button class="nav" href="#"><span>Star Wars Nerd</span></button>
+        <a class="nav" href="#" class="nav"><span>Coffee Snob</span></a>
+        <a class="nav" href="#"><span>Star Wars Nerd</span></a>
     </div>
 </section>
