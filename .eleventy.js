@@ -1,5 +1,8 @@
 // .eleventy.js
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+//
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
+const Image = require("@11ty/eleventy-img");
+
 module.exports = function (eleventyConfig) {
   // Copy directory to the output folder
   eleventyConfig.addPassthroughCopy("photos");
@@ -8,6 +11,27 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("style.css");
   eleventyConfig.addPassthroughCopy("robtos.txt");
   eleventyConfig.addPassthroughCopy("sitemap.xml");
+  eleventyConfig.addPlugin(pluginWebc);
+
+  eleventyConfig.addShortcode(
+    "image",
+    async function (src, alt, widths = [300, 600], sizes = "100vh") {
+      let metadata = await Image(src, {
+        widths,
+        formats: ["avif", "jpeg"],
+      });
+
+      let imageAttributes = {
+        alt,
+        sizes,
+        loading: "lazy",
+        decoding: "async",
+      };
+
+      // You bet we throw an error on a missing alt (alt="" works okay)
+      return Image.generateHTML(metadata, imageAttributes);
+    },
+  );
 
   // Configure a collection to read images from the images directory
   eleventyConfig.addCollection("imageList", function (collectionApi) {

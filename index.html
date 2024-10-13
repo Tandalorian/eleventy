@@ -14,11 +14,9 @@ layout: layout.html
         justify-content: center;
         align-items: center;
         width: 560px;
-        max-width:;
-    }
-    .image-container img {
+        background: url(/images/circle-name.png) no-repeat center center;
+        background-size: contain;
         aspect-ratio: 1 / 1;
-        position: absolute;
     }
     .button-container {
         display: flex;
@@ -119,7 +117,8 @@ layout: layout.html
             display: none;
         }
         .button-container {
-            width: 150px;
+            width: 80px;
+            align-items: flex-end;
         }
     }
 </style>
@@ -130,11 +129,6 @@ layout: layout.html
             src="/images/tm-coffee.avif"
             class="profile-pic"
             alt="profile picture of tanner's lego minifigure"
-        />
-        <img
-            src="/images/circle-name.png"
-            class="circle-name"
-            alt="Tanner the Mardis"
         />
     </div>
 
