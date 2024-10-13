@@ -3,35 +3,110 @@ layout: layout.html
 ---
 
 <style>
-    .sectionone {
+    @media screen and (max-width: 900px) {
+        .nav span {
+            display: none;
+        }
+    }
+    .container {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 30rem;
-        padding: var(--space-m) 0% var(--space-m) 0%;
+        padding: var(--space-m) 0% var(--space-m) 10%;
     }
-    .sectiontwo {
-        margin: 100px auto;
+    .image-container {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        gap: var(--space-l);
-        padding: var(--space-m) 0% var(--space-m) 0%;
-        height: 10svh;
+        justify-content: center;
+        align-items: center;
+        width: 560px;
     }
-    a.nav {
-        padding: var(--space-s) var(--space-l);
-        text-align: center;
+    .image-container img {
+        aspect-ratio: 1 / 1;
+        position: absolute;
+    }
+    .button-container {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: flex-start;
+        gap: var(--space-m);
+        z-index: 1;
+        width: 20%;
+    }
+    .nav {
+        background: none;
+        color: var(--cream);
+        padding: var(--space-2xs);
         border: 1px solid var(--midgreen);
-        border-radius: var(--space-l);
+        border-radius: var(--space-xl);
         text-transform: uppercase;
+        text-align: left;
         font-weight: 400;
         letter-spacing: 2px;
-        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+        white-space: nowrap;
+        display: inline-flex;
+        font-family: "Regular XL Soft", sans-serif;
+        font-size: var(--step-0);
+        color: var(--cream);
+        align-items: center;
     }
-    a.nav:hover {
+    .nav:nth-child(1),
+    .nav:nth-last-child(1) {
+        margin-left: -200px;
+    }
+    .nav:nth-child(2),
+    .nav:nth-last-child(2) {
+        margin-left: -90px;
+    }
+    .nav:nth-child(3),
+    .nav:nth-last-child(3) {
+        margin-left: -40px;
+    }
+    .nav:nth-child(4),
+    .nav:nth-last-child(4) {
+        margin-left: -20px;
+    }
+    .nav::before {
+        width: 26px;
+        height: 26px;
+        display: inline-block;
+    }
+    .nav:nth-child(1):before {
+        content: url(images/icon-camera.svg);
+    }
+    .nav:nth-child(2):before {
+        content: url(images/icon-book.svg);
+    }
+    .nav:nth-child(3):before {
+        content: url(images/icon-typewriter.svg);
+    }
+    .nav:nth-child(4):before {
+        content: url(images/icon-pen-swirl.svg);
+    }
+    .nav:nth-child(5):before {
+        content: url(images/icon-twitter.svg);
+    }
+    .nav:nth-child(6):before {
+        content: url(images/icon-codepen.svg);
+    }
+    .nav:nth-child(7):before {
+        content: url(images/icon-mug-hot.svg);
+    }
+    .nav:nth-child(8):before {
+        content: url(images/icon-starwars.svg);
+    }
+    .nav span {
+        margin-right: var(--space-2xs);
+        margin-left: var(--space-s);
+    }
+    .nav:hover {
         color: var(--limegreen);
         border: 1px solid var(--limegreen);
+        padding-left: var(--space-m);
     }
     .profile-pic {
         object-fit: cover;
@@ -42,13 +117,10 @@ layout: layout.html
     .circle-name {
         height: 35rem;
     }
-    .sectionone img {
-        position: absolute;
-    }
 </style>
 
-<div class="container">
-    <div class="sectionone">
+<section class="container">
+    <div class="image-container">
         <img
             src="images/tm-coffee.avif"
             class="profile-pic"
@@ -61,15 +133,24 @@ layout: layout.html
         />
     </div>
 
-    <div class="sectiontwo">
-        <a class="nav" href="https://dribbble.com/tannermardis" target="blank"
-            >Dribbble</a
+    <div class="button-container">
+        <button class="nav" href="/photography">
+            <span>Photographer</span>
+        </button>
+        <button class="nav" href="/bookshelf"><span>Book Reader</span></button>
+        <button class="nav" href="/thoughts"><span>Thinker</span></button>
+        <button class="nav" href="/portfolio"><span>Designer</span></button>
+        <button class="nav" href="https://x.com/tannermardis" target="_blank">
+            <span>Tweeter</span>
+        </button>
+        <button
+            class="nav"
+            href="https://codepen.io/mardisstudio"
+            target="_blank"
         >
-        <a class="nav" href="https://x.com/tannermardis" target="blank"
-            >Twitter</a
-        >
-        <a class="nav" href="/bookshelf">Bookshelf</a>
-        <a class="nav" href="/photography">Photography</a>
-        <a class="nav" href="/thoughts">Thoughts</a>
+            <span>Wannabe Coder</span>
+        </button>
+        <button class="nav" href="#"><span>Coffee Snob</span></button>
+        <button class="nav" href="#"><span>Star Wars Nerd</span></button>
     </div>
-</div>
+</section>

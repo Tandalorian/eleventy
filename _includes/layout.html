@@ -75,6 +75,7 @@
                 --grey500: oklch(18% 0.001 60);
 
                 /*SPACE*/
+                --space-zero: 0px;
                 --space-3xs: clamp(
                     0.25rem,
                     0.2299rem + 0.0992vw,
@@ -162,6 +163,20 @@
                         oklch(30% 0.01 60) 100%
                     );
             }
+
+            /*INDEX*/
+            --inner-circle-size: 300px;
+            --outer-circle-size: 400px;
+            --outer-radius: calc(var(--outer-circle-size) / 2);
+
+            /* Angle variables */
+            --angle-1: 75deg;
+            --angle-2: 50deg;
+            --angle-3: 25deg;
+            --angle-4: 0deg;
+            --angle-5: -25deg;
+            --angle-6: -50deg;
+            --angle-7: -75deg;
 
             /*RESET*/
             *,
