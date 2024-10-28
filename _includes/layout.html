@@ -63,6 +63,11 @@
                 --step-2: clamp(1.7769rem, 1.5344rem + 1.1974vw, 2.5313rem);
 
                 /*COLORS*/
+                --greengradient: linear-gradient(
+                    in oklch,
+                    var(--darkgreen) 0%,
+                    oklch(64% 0.14 157 / 0.1) 100%
+                );
                 --cream: oklch(90% 0.01 90);
                 --limegreen: oklch(80% 0.15 128);
                 --midgreen: oklch(64% 0.14 157);
@@ -179,11 +184,26 @@
             --angle-7: -75deg;
 
             /*RESET*/
+            /* 1. Use a more-intuitive box-sizing model */
             *,
             *::before,
             *::after {
                 box-sizing: border-box;
             }
+
+            /* 2. Remove default margin */
+            * {
+                margin: 0;
+            }
+
+            body {
+                /* 3. Add accessible line-height */
+                line-height: 1.5;
+                /* 4. Improve text rendering */
+                -webkit-font-smoothing: antialiased;
+            }
+
+            /* 5. Improve media defaults */
             img,
             picture,
             video,
@@ -192,6 +212,46 @@
                 display: block;
                 max-width: 100%;
             }
+
+            /* 6. Inherit fonts for form controls */
+            input,
+            button,
+            textarea,
+            select {
+                font: inherit;
+            }
+
+            /* 7. Avoid text overflows */
+            p,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                overflow-wrap: break-word;
+            }
+
+            /* 8. Improve line wrapping */
+            p {
+                text-wrap: pretty;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                text-wrap: balance;
+            }
+
+            /*
+              9. Create a root stacking context
+            */
+            #root,
+            #__next {
+                isolation: isolate;
+            }
             /*END RESET*/
             html {
                 background: var(--darkgreen);
@@ -199,6 +259,7 @@
                 height: 100%;
             }
             body {
+                height: 100%;
                 font-family: "Regular XL Soft", sans-serif;
                 font-size: var(--step-0);
                 line-height: 1.5;
@@ -208,6 +269,7 @@
             }
             header {
                 display: flex;
+                align-items: center;
                 max-width: var(--grid-max-width);
                 padding-inline: var(--grid-gutter);
                 margin-inline: auto;
@@ -222,7 +284,7 @@
                 color: var(--brightgreen);
             }
             .logo {
-                width: var(--space-3xl);
+                width: 200px;
                 margin: var(--space-xs);
             }
         </style>
@@ -232,7 +294,7 @@
             <a href="/index.html">
                 <img
                     class="logo"
-                    src="/images/tanner-mardis-logo-white.svg"
+                    src="/images/tanner-mardis-logo-green.svg"
                     alt="Tanner Mardis Logo"
                 />
             </a>

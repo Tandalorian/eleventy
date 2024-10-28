@@ -7,7 +7,9 @@ title: Tanner's Bookshelf
     html {
         background: var(--grey500);
     }
-
+    main {
+        padding-bottom: var(--space-xl);
+    }
     .bookcase {
         justify-self: center;
         display: flex;
@@ -19,7 +21,6 @@ title: Tanner's Bookshelf
         padding: 0px 0px;
         max-width: var(--grid-max-width);
     }
-
     .bookwrap {
         height: clamp(350px, 40svh, 500px);
         width: clamp(200px, 20vw, 300px);
@@ -46,7 +47,6 @@ title: Tanner's Bookshelf
     .book {
         width: 150px;
         min-height: 150px;
-        background: var(--grey500);
         position: relative;
         bottom: -24px;
         margin: 0px;
@@ -63,6 +63,7 @@ title: Tanner's Bookshelf
         border: 1px solid var(--6);
         max-width: 100%;
         display: block;
+        border-radius: 2px;
     }
 </style>
 
@@ -78,6 +79,18 @@ title: Tanner's Bookshelf
         </div>
     </div>
     {% endfor %}
+    <div class="bookwrap">
+        <div class="book">
+            <a
+                href="https://www.amazon.com/Creativity-Inc-Expanded-Overcoming-Inspiration/dp/0593594649"
+                target="_blank"
+            >
+                <img
+                    src="https://m.media-amazon.com/images/I/41phtyJ09KL._SY445_SX342_.jpg"
+                    alt="Creativity, Inc. (The Expanded Edition): Overcoming the Unseen Forces That Stand in the Way of True Inspiration"
+            /></a>
+        </div>
+    </div>
     <div class="bookwrap">
         <div class="book">
             <a
