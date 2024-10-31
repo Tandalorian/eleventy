@@ -3,9 +3,6 @@ layout: layout.html
 ---
 
 <style>
-    html {
-        background: var(--darkgreen);
-    }
     body {
         background: var(--greengradient);
     }
@@ -20,9 +17,12 @@ layout: layout.html
         justify-content: center;
         align-items: center;
         width: 560px;
+        height: 560px;
         background: url(/images/circle-name.png) no-repeat center center;
         background-size: contain;
         aspect-ratio: 1 / 1;
+        transition-duration: 0.8s;
+        transition-property: all;
     }
     .button-container {
         display: flex;
@@ -117,6 +117,15 @@ layout: layout.html
     }
     .circle-name {
         width: 560px;
+        animation: rotate 2s;
+    }
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(30deg);
+        }
     }
     @media screen and (max-width: 780px) {
         .nav span {
@@ -133,7 +142,7 @@ layout: layout.html
     <div class="image-container">
         <img
             id="mainImage"
-            src="/images/tm-blank.avif"
+            src="/images/tm-sq-blank.avif"
             class="profile-pic"
             alt="profile picture of tanner's lego minifigure"
         />
@@ -141,30 +150,30 @@ layout: layout.html
 
     <div class="button-container">
         <a
-            data-img="/images/tm-photography.avif"
+            data-img="/images/tm-sq-photography.avif"
             class="nav"
             href="/photography"
             ><span>Photographer</span></a
         >
         <a
-            data-img="/images/tm-book.avif"
+            data-img="/images/tm-sq-book.avif"
             class="nav"
             href="/bookshelf"
             class="nav"
             ><span>Book Reader</span></a
         >
         <a
-            data-img="/images/tm-blank.avif"
+            data-img="/images/tm-sq-blank.avif"
             class="nav"
             href="/thoughts"
             class="nav"
             ><span>Thinker</span></a
         >
-        <a data-img="/images/tm-design.avif" class="nav" href="#" class="nav"
+        <a data-img="/images/tm-sq-design.avif" class="nav" href="#" class="nav"
             ><span>Designer</span></a
         >
         <a
-            data-img="/images/tm-twitter.avif"
+            data-img="/images/tm-sq-twitter.avif"
             class="nav"
             href="https://x.com/tannermardis"
             target="_blank"
@@ -172,17 +181,17 @@ layout: layout.html
             ><span>Tweeter</span></a
         >
         <a
-            data-img="/images/tm-laptop.avif"
+            data-img="/images/tm-sq-laptop.avif"
             class="nav"
             href="https://codepen.io/mardisstudio"
             target="_blank"
             class="nav"
             ><span>Wannabe Coder</span></a
         >
-        <a data-img="/images/tm-coffee.avif" class="nav" href="#" class="nav"
+        <a data-img="/images/tm-sq-coffee.avif" class="nav" href="#" class="nav"
             ><span>Coffee Snob</span></a
         >
-        <a data-img="/images/tm-jedi.avif" class="nav" href="#"
+        <a data-img="/images/tm-sq-jedi.avif" class="nav" href="#"
             ><span>Star Wars Nerd</span></a
         >
     </div>
