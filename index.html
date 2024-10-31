@@ -132,20 +132,39 @@ layout: layout.html
 <section class="container">
     <div class="image-container">
         <img
-            src="/images/tm-coffee.avif"
+            id="mainImage"
+            src="/images/tm-blank.avif"
             class="profile-pic"
             alt="profile picture of tanner's lego minifigure"
         />
     </div>
 
     <div class="button-container">
-        <a class="nav" href="/photography"><span>Photographer</span></a>
-        <a class="nav" href="/bookshelf" class="nav"
+        <a
+            data-img="/images/tm-photography.avif"
+            class="nav"
+            href="/photography"
+            ><span>Photographer</span></a
+        >
+        <a
+            data-img="/images/tm-book.avif"
+            class="nav"
+            href="/bookshelf"
+            class="nav"
             ><span>Book Reader</span></a
         >
-        <a class="nav" href="/thoughts" class="nav"><span>Thinker</span></a>
-        <a class="nav" href="#" class="nav"><span>Designer</span></a>
         <a
+            data-img="/images/tm-blank.avif"
+            class="nav"
+            href="/thoughts"
+            class="nav"
+            ><span>Thinker</span></a
+        >
+        <a data-img="/images/tm-design.avif" class="nav" href="#" class="nav"
+            ><span>Designer</span></a
+        >
+        <a
+            data-img="/images/tm-twitter.avif"
             class="nav"
             href="https://x.com/tannermardis"
             target="_blank"
@@ -153,13 +172,43 @@ layout: layout.html
             ><span>Tweeter</span></a
         >
         <a
+            data-img="/images/tm-laptop.avif"
             class="nav"
             href="https://codepen.io/mardisstudio"
             target="_blank"
             class="nav"
             ><span>Wannabe Coder</span></a
         >
-        <a class="nav" href="#" class="nav"><span>Coffee Snob</span></a>
-        <a class="nav" href="#"><span>Star Wars Nerd</span></a>
+        <a data-img="/images/tm-coffee.avif" class="nav" href="#" class="nav"
+            ><span>Coffee Snob</span></a
+        >
+        <a data-img="/images/tm-jedi.avif" class="nav" href="#"
+            ><span>Star Wars Nerd</span></a
+        >
     </div>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const mainImage = document.getElementById("mainImage");
+        const buttons = document.querySelectorAll(".nav");
+
+        // Function to change the image source
+        function setImage(src) {
+            mainImage.src = src;
+        }
+
+        // Add hover event listeners to each button
+        buttons.forEach((button) => {
+            button.addEventListener("mouseenter", function () {
+                setImage(this.dataset.img);
+            });
+
+            // Optional: Reset image when mouse leaves all buttons
+            button.addEventListener("mouseleave", function () {
+                // If you want to revert to a default image when not hovering
+                // setImage('default.jpg');
+            });
+        });
+    });
+</script>
