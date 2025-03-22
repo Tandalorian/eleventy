@@ -1,11 +1,4 @@
 /* @link https://utopia.fyi/type/calculator?c=324,16,1.333,1332,18,1.5,2,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=xs,l,2xl,12 */
-/*@font-face {
-    font-family: "rubik";
-    font-weight: 300;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/rubik/v1/MwQ5bhb078Wt2VFBPap6.woff2)
-        format("woff2");
-}*/
 @font-face {
     font-family: "Regular XL Soft";
     src:
@@ -35,6 +28,11 @@
     --step-2: clamp(1.7769rem, 1.5344rem + 1.1974vw, 2.5313rem);
 
     /*COLORS*/
+    --greengradient: linear-gradient(
+        in oklch,
+        var(--darkgreen) 0%,
+        oklch(64% 0.14 157 / 0.1) 100%
+    );
     --cream: oklch(90% 0.01 90);
     --limegreen: oklch(80% 0.15 128);
     --midgreen: oklch(64% 0.14 157);
@@ -47,6 +45,7 @@
     --grey500: oklch(18% 0.001 60);
 
     /*SPACE*/
+    --space-zero: 0px;
     --space-3xs: clamp(0.25rem, 0.2299rem + 0.0992vw, 0.3125rem); /*min 4px*/
     --space-2xs: clamp(0.5rem, 0.4799rem + 0.0992vw, 0.5625rem); /*min 8px*/
     --space-xs: clamp(0.75rem, 0.7098rem + 0.1984vw, 0.875rem); /*min 12px*/
@@ -96,12 +95,41 @@
         );
 }
 
+/*INDEX*/
+--inner-circle-size: 300px;
+--outer-circle-size: 400px;
+--outer-radius: calc(var(--outer-circle-size) / 2);
+
+/* Angle variables */
+--angle-1: 75deg;
+--angle-2: 50deg;
+--angle-3: 25deg;
+--angle-4: 0deg;
+--angle-5: -25deg;
+--angle-6: -50deg;
+--angle-7: -75deg;
+
 /*RESET*/
+/* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
 img,
 picture,
 video,
@@ -110,6 +138,38 @@ svg {
     display: block;
     max-width: 100%;
 }
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+    overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
 /*END RESET*/
 html {
     background: var(--darkgreen);
@@ -117,17 +177,20 @@ html {
     height: 100%;
 }
 body {
-    font-family: "Regular XL Soft", "rubik", sans-serif;
+    height: 100%;
+    font-family: "Regular XL Soft", sans-serif;
     font-size: var(--step-0);
     line-height: 1.5;
     color: var(--cream);
+    padding: 0px;
+    margin: 0px;
 }
 header {
     display: flex;
-    max-width: var(--grid-max-width);
+    align-items: center;
     padding-inline: var(--grid-gutter);
     margin-inline: auto;
-    padding: var(--space-m) 0% var(--space-m) 0%;
+    padding: var(--space-m);
 }
 main {
     max-width: var(--grid-max-width);
@@ -138,6 +201,6 @@ a {
     color: var(--brightgreen);
 }
 .logo {
-    width: var(--space-3xl);
+    width: 150px;
     margin: var(--space-xs);
 }

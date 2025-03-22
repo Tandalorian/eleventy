@@ -1,18 +1,17 @@
 // .eleventy.js
-//
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
+
 const Image = require("@11ty/eleventy-img");
+const fs = require("fs");
+const path = require("path");
 
 module.exports = function (eleventyConfig) {
-  // Copy directory to the output folder
+  // Copy directories to the output folder
   eleventyConfig.addPassthroughCopy("photos");
   eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("fonts");
-  eleventyConfig.addPassthroughCopy("style.css");
-  eleventyConfig.addPassthroughCopy("robtos.txt");
-  eleventyConfig.addPassthroughCopy("sitemap.xml");
-  eleventyConfig.addPlugin(pluginWebc);
+  // Ensure Liquid is set as a template engine
+  eleventyConfig.setTemplateFormats("liquid,njk,html");
 
+  // Add image shortcode
   eleventyConfig.addShortcode(
     "image",
     async function (src, alt, widths = [300, 600], sizes = "100vh") {
@@ -28,20 +27,23 @@ module.exports = function (eleventyConfig) {
         decoding: "async",
       };
 
-      // You bet we throw an error on a missing alt (alt="" works okay)
+      // Ensure alt text is provided
+      if (!alt && alt !== "") {
+        throw new Error(
+          "The 'alt' attribute is required for the image shortcode.",
+        );
+      }
+
       return Image.generateHTML(metadata, imageAttributes);
     },
   );
 
-  // Configure a collection to read images from the images directory
+  // Configure a collection to read images from the photos directory
   eleventyConfig.addCollection("imageList", function (collectionApi) {
-    const fs = require("fs");
-    const path = require("path");
-
     const imageDir = "photos";
     const imageExtensions = [".jpg", ".jpeg", ".png", ".avif"];
 
-    // Read all files in the images directory
+    // Read all files in the photos directory
     let images = fs.readdirSync(imageDir).filter((file) => {
       return imageExtensions.includes(path.extname(file).toLowerCase());
     });
